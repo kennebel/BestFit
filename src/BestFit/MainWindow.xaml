@@ -7,6 +7,26 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         
+        <!-- Region Row 0, Input -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="30" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0" Text="{Binding StartOn}" />
+            <TextBox Grid.Column="1" Text="{Binding EndOn}" />
+            <Button Grid.Column="2" Click="Go_Click">-></Button>
+        </Grid>
+        <!-- Endregion -->
+
+        <!-- Region Row 1, Output -->
+        <!-- Endregion -->
     </Grid>
 </Window>

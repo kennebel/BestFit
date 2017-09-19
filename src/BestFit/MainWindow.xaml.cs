@@ -20,9 +20,25 @@ namespace BestFit
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainViewModel ViewModel
+        {
+            get { return (MainViewModel)this.DataContext; }
+            set { this.DataContext = value; }
+        }
+
+        public MainWindow() : this(viewModel: null) { }
+
+        public MainWindow(MainViewModel viewModel)
         {
             InitializeComponent();
+
+            if (viewModel == null) { viewModel = new MainViewModel(); }
+            ViewModel = viewModel;
+        }
+
+        private void Go_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
